@@ -22,7 +22,7 @@ rbase:
          build-required: no
          Dockerfile: default
 
-rfull:
+rfull: 
         Env: 
          R: 5.0
          R_ver: 5.0.1
