@@ -1,0 +1,33 @@
+ros:
+        Baselayername: Centos
+        Baselayertag: 8.6-754
+        Build_layer_name: ros
+        Build_layer_tag: 2023_08_21
+        R_VERSION: 4.2.1 @3123 .. /!
+
+
+rdepth:
+        Baselayername: ros
+        Baselayertag: 2023_08_21
+        Build_layer_name: rdepth
+        Build_layer_tag: 2023_08_211
+
+rbase:
+         Env:
+          R: 4.2.1
+         Baselayername: rdepth
+         Baselayertag: 2023q09
+         Build_layer_name: rbase
+         Build_layer_tag: 2023q091
+         build-required: no
+         Dockerfile: default
+
+rfull:
+        Env: 
+         R: 5.0
+         R_ver: 5.0.1
+         Drivers: 2022.11.0-1
+        Build_layer_name: rbase
+        Build_layer_tag: 2023q091
+        build-required: no
+        Dockerfile: default
