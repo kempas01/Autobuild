@@ -30,7 +30,7 @@ jobs:
         run: cat input.yaml
       
       - name: Run update script
-        run: python testing.py
+        run: python Version_Check.py
 
       - name: Show file changes
         run: git status
