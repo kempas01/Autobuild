@@ -23,7 +23,6 @@ rfull:
   build-required: false
 ros:
   Baselayername: Centos
-  
   Baselayertag: 8.6-754
   Build_layer_name: ros
   Build_layer_tag: 20230821
