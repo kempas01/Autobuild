@@ -34,19 +34,14 @@ jobs:
         
       - name: Env values
         run: |
+          echo " Rbase Buildlayertag = $rbase_Build_layer_tag "
+          echo " Rbase Env = $rbase_Env_R "
           echo " ROS Baselayername = $ros_Baselayername"
           echo " ROS Baselayertag = $ros_Baselayertag "
           echo " ROS Version = $ros_R_VERSION "
           echo " ROS Buildlayername = $rdepth_Build_layer_name "
           echo " ROS Buildlayertag = $ros_Build_layer_tag "
           echo " Rdepth Baselayername = $rdepth_Baselayername "
-          echo " Rdepth Baselayertag = $rdepth_Baselayertag "
-          echo " Rdepth Buildlayername = $rdepth_Build_layer_name "
-          echo " Rdepth Buildlayertag = $rdepth_Build_layer_tag "
-          echo " Rbase Buildlayertag = $rbase_Build_layer_tag "
-          echo " Rbase Env = $rbase_Env_R "
-          echo " Rfull Env = $rfull_Env_R "
-          echo " Rfull EnvRver = $rfull_Env_R_ver "
           echo " Rfull Drivers = $rfull_Env_Drivers  "
           echo " ROS Baselayername = $ros_Baselayertag"
           
