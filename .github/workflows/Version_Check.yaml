@@ -39,15 +39,18 @@ jobs:
       - name: Show updated input YAML file
         run: cat input.yaml
 
-      - name: Commit and push changes
+      - name: Commit changes
         run: |
           git config --global user.name 'kempas01'
           git config --global user.email 'srinath.kempanna@pfizer.com'
           git add input.yaml
           git commit -m 'Update input.yaml with new release information'
-          git push
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+       
+
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+         GITHUB_TOKEN: ${{ secrets.PAT }}
 
       - name: Show file changes
         run: git status
