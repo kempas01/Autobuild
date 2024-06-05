@@ -47,10 +47,10 @@ jobs:
        
 
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v0.6.0
         with:
-         force: true
          github_token: ${{ secrets.PAT }}
+         force: true
 
       - name: Show file changes
         run: git status
