@@ -4,8 +4,8 @@ name: Automate Docker Image Build
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: 
-      - main
+    #branches: 
+    #  - main
     paths:  
       - 'input.yaml'
 
