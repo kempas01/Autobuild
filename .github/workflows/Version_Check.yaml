@@ -41,8 +41,8 @@ jobs:
 
       - name: Commit and push changes
         run: |
-          git config --global user.name 'Bhav21v'
-          git config --global user.email 'bhvaid21@gmail.com'
+          git config --global user.name 'kempas01'
+          git config --global user.email 'srinath.kempanna@pfizer.com'
           git add input.yaml
           git commit -m 'Update input.yaml with new release information'
           git push
