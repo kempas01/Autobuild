@@ -47,8 +47,9 @@ jobs:
        
 
       - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0
+        uses: ad-m/github-push-action@master
         with:
+         force: true
          github_token: ${{ secrets.PAT }}
 
       - name: Show file changes
