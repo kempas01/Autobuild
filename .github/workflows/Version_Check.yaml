@@ -41,14 +41,14 @@ jobs:
 
       - name: Commit changes
         run: |
-          git config --global user.name 'kempas01'
-          git config --global user.email 'srinath.kempanna@pfizer.com'
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git add -A
           git commit -m 'Update input.yaml with new release information'
        
 
       - name: Push changes
-        uses: ad-m/github-push-action@master
+        uses: ad-m/github-push-action@v0.6.0
         with:
          github_token: ${{ secrets.PAT }}
 
