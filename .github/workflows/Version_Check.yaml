@@ -5,6 +5,7 @@ name: Check for new release and update the input file with latest information.
  #   branches:
   #    - main
 on:
+  workflow_dispatch: 
   schedule:
     - cron: '10 13 31 5 *' 
 
