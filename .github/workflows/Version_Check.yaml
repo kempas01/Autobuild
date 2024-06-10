@@ -1,21 +1,28 @@
 name: Check for new release and update the input file with latest information.
 
-#on:
-#  push:
- #   branches:
-  #    - main
 on:
+  workflow_dispatch: 
   schedule:
-    - cron: '10 13 31 5 *' 
+    - cron: '22 18 10 6 *' 
 
 jobs:
   update-yaml:
     runs-on: ubuntu-latest
 
+ # Give the default GITHUB_TOKEN write permission to commit and push the added or changed files to the repository.
+    permissions:
+      contents: write
+      
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
-        
+        uses: actions/checkout@v4
+        with:
+         ref: ${{ github.head_ref }}
+         
+      - uses: actions/checkout@v4
+        with:
+         token: ${{ secrets.PAT }}  
+         
       - name: Set up Python
         uses: actions/setup-python@v4
         with: 
@@ -48,5 +55,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.PAT }}
 
-      - name: Show file changes
-        run: git status
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+         github_token: ${{ secrets.PAT }}
