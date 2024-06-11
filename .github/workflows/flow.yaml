@@ -29,9 +29,9 @@ jobs:
      id: read-yaml
      run: |
        python -c "
-        import yaml
-        import json
-        with open('input.yaml', 'r') as file:
+       import yaml
+       import json
+       with open('input.yaml', 'r') as file:
            data = yaml.safe_load(file)
            matrix = [{'block_name': key, 'inputs': value} for key, value in data.items() if value.get('build_required') == 'yes']
            print(f'::set-output name=matrix::{json.dumps(matrix)}')
